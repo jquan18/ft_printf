@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchin <juchin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juchin <juchin@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 17:57:27 by juchin            #+#    #+#             */
-/*   Updated: 2023/10/19 18:46:51 by juchin           ###   ########.fr       */
+/*   Created: 2023/10/27 15:41:17 by juchin            #+#    #+#             */
+/*   Updated: 2023/10/27 15:41:17 by juchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlen(char  *str)
+int ft_tolower(int c)
 {
-    size_t  i;
-
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+    if (c >= 'A' && c <= 'Z')
+        c += 32;
+    return (c);
 }
