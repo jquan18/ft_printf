@@ -17,8 +17,6 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count && size && count > UINT_MAX / size)
 		return (NULL);
-	if (count == 0 || size == 0)
-		return (NULL);
 	ptr = malloc(count * size);
 	if (ptr == NULL)
 		return (NULL);

@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juchin@student.42kl.edu.my <juchin>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 14:16:48 by juchin@stud       #+#    #+#             */
-/*   Updated: 2023/10/28 14:16:48 by juchin@stud      ###   ########.fr       */
+/*   Created: 2023/10/28 14:38:02 by juchin@stud       #+#    #+#             */
+/*   Updated: 2023/10/28 14:38:02 by juchin@stud      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *str1, const void *str2, size_t n)
+char	*ft_strnstr(const char *str, const char *substr, size_t n)
 {
-	char	*s1;
-	char	*s2;
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	s1 = (char *)str1;
-	s2 = (char *)str2;
-	while (s1[i] || s2[i])
+	j = 0;
+	if (substr == NULL || substr[i] == '\0')
+		return ((char *)str);
+	while (str[i] && i < n)
 	{
-		if (i < n)
+		if (str[i] == substr[j])
 		{
-			if (s2[i] - s1[i] != 0)
+			while (str[i + j] == substr[j] && (i + j) < n)
 			{
-				if (s1[i] > s2[i])
-					return (1);
-				else
-					return (-1);
+				if (substr[j + 1] == '\0')
+					return ((char *)str + i);
+				j++;
 			}
+			j = 0;
 		}
 		i++;
 	}

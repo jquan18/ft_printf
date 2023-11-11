@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchin <juchin@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: juchin <juchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:37:36 by juchin            #+#    #+#             */
-/*   Updated: 2023/10/27 16:37:36 by juchin           ###   ########.fr       */
+/*   Created: 2023/10/19 17:56:37 by juchin            #+#    #+#             */
+/*   Updated: 2023/10/19 18:00:57 by juchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(void const *str, int c, size_t n)
+int	ft_isprint(int c)
 {
-	char	*strptr;
-
-	*strptr = (char *)str;
-	while (n--)
-	{
-		if (*strptr == (char)c)
-			return ((void *)strptr);
-		strptr++;
-	}
-	return (NULL);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juchin@student.42kl.edu.my <juchin>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 14:28:46 by juchin@stud       #+#    #+#             */
-/*   Updated: 2023/10/28 14:28:46 by juchin@stud      ###   ########.fr       */
+/*   Created: 2023/10/28 14:24:08 by juchin@stud       #+#    #+#             */
+/*   Updated: 2023/10/28 14:24:08 by juchin@stud      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t numBytes)
 {
-	size_t	i;
-	size_t	n;
-	size_t	totallen;
+	size_t		i;
+	char		*dest_ptr;
+	const char	*src_ptr;
 
 	i = 0;
-	n = 0;
-	totallen = ft_strlen(dest) + ft_strlen((char *)src);
-	if (!dest || !src || size <= 0)
-		return (0);
-	while (dest[i] && size > 1)
+	dest_ptr = (char *)dest;
+	src_ptr = (char *)src;
+	while (i < numBytes)
 	{
+		dest_ptr[i] = src_ptr[i];
 		i++;
-		size--;
 	}
-	while (src[n] && size > 1)
-	{
-		dest[i] = src[n];
-		i++;
-		size--;
-		n++;
-	}
-	dest[i] = '\0';
-	return (totallen);
+	return (dest_ptr);
 }

@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchin@student.42kl.edu.my <juchin>        +#+  +:+       +#+        */
+/*   By: juchin <juchin@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 14:38:45 by juchin@stud       #+#    #+#             */
-/*   Updated: 2023/10/28 14:38:45 by juchin@stud      ###   ########.fr       */
+/*   Created: 2023/10/23 12:06:26 by juchin            #+#    #+#             */
+/*   Updated: 2023/10/23 12:06:26 by juchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
-char	*ft_strrchr(char const *str, int c)
+int	ft_toupper(int c)
 {
-	size_t	len;
-
-	len = ft_strlen((char *)str);
-	while (len--)
-	{
-		if (*str == (char)c)
-			return ((char *)str);
-		str++;
-	}
-	return (NULL);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchin@student.42kl.edu.my <juchin>        +#+  +:+       +#+        */
+/*   By: juchin <juchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 14:24:08 by juchin@stud       #+#    #+#             */
-/*   Updated: 2023/10/28 14:24:08 by juchin@stud      ###   ########.fr       */
+/*   Created: 2023/10/19 17:36:43 by juchin            #+#    #+#             */
+/*   Updated: 2023/10/19 17:36:43 by juchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t numBytes)
+int	ft_isdigit(int c)
 {
-	size_t		i;
-	char		*dest_ptr;
-	const char	*src_ptr;
-
-	i = 0;
-	dest_ptr = (char *)dest;
-	src_ptr = (const char *)src;
-	while (i < numBytes)
-	{
-		dest_ptr[i] = src_ptr[i];
-		i++;
-	}
-	return (dest_ptr);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
